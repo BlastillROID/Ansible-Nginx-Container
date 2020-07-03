@@ -1,4 +1,8 @@
-<!doctype html>
+#!/usr/bin/env bash
+HTMLFILE="./index.html"
+TIMESTAMP=`date "+%s"`
+
+echo "<!doctype html>
 <html>
   <head>
     <title>It works !!</title>
@@ -6,6 +10,6 @@
   <body>
     <p>if you see this page , it means that this project is <strong>functional</strong>. </p>
     <br>
-    <p> this file was created at 1593806598 </p>
+    <p> this file was created at $TIMESTAMP </p>
   </body>
-</html> 
+</html> " > $HTMLFILE
