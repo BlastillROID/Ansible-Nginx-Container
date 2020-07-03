@@ -25,3 +25,5 @@ The execution of the ansible playbook does the following tasks:
 ansible-playbook ansible/playbook/playbook.yml -K
 ```
 P.S: The `-K` flag is mandatory only if your **root** user is protected with a password... this prompts ansible to ask for a password tty
+
+After Ansible finishes running all the listed plays the project should be accessible from [localhost](http://localhost)
