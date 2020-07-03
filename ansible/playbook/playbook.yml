@@ -1,0 +1,36 @@
+---
+- hosts: all
+  connection: local
+  become: true
+
+  tasks:
+#Check Affected hosts
+    - debug:
+        msg: System host is {{ inventory_hostname }}
+
+#Install Docker Python package to allow ansible -> Docker communication
+    - name: install certain python modules for docker
+      pip:
+          name: "{{ item.name }}"
+          state: present
+      with_items:
+        - { name: docker }
+
+#Build the provided Image and tag it as latest 
+    - name: Build WebServer Docker Image
+      docker_image:
+        name: smart-steel-tech
+        tag: latest
+        build:
+          path: ./../../CentOS/
+          args:
+            listen_port: 80
+        source: build
+
+#Create a container from the aforementioned image, mark it with the hostname and expose the needed ports
+    - name: Create WebServer Container
+      docker_container:
+        name: "Smart-Steel-{{ inventory_hostname }}"
+        image: "smart-steel-tech:latest"
+        state: started
+        published_ports: "0.0.0.0:80:80"
