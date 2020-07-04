@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-HTMLFILE="./index.html"
+HTMLFILE="/usr/share/nginx/html/index.html"
 TIMESTAMP=`date "+%s"`
 
 echo "<!doctype html>
@@ -13,3 +13,5 @@ echo "<!doctype html>
     <p> this file was created at $TIMESTAMP </p>
   </body>
 </html> " > $HTMLFILE
+
+
