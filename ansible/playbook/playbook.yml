@@ -22,7 +22,7 @@
         name: smart-steel-tech
         tag: latest
         build:
-          path: ./../../CentOS/
+          path: ./../../
           args:
             listen_port: 80
         source: build

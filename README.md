@@ -6,7 +6,7 @@
 - [Python3.7.x](https://realpython.com/installing-python/#:~:text=There%20are%20several%20common%20ways%20to%20accomplish%20this%3A,relevant%20section%20in%20the%20tutorial.%20More%20items...%20)
 ## 2. File Architecture
 ### 2.1 CentOS
-A folder containing the [Dockerfile](CentOS/Dockerfile) of the nginx web server, the [index](CentOS/index.html) HTML file to serve and a [.conf](CentOS/nginx.conf) file to setup and configure the webserver inside the container.
+A folder containing the [Dockerfile](CentOS/Dockerfile) of the nginx web server, the [index](CentOS/index.html) HTML file to serve, the [generate_index](CentOS/generate_index.sh) pipes a HTML content into the index.html along with the current UNIX timestamp (the moment the file was create) and a [.conf](CentOS/nginx.conf) file to setup and configure the webserver inside the container.
 ### 2.2 Ansible
 A folder containing all the ansible configuration files:
 
